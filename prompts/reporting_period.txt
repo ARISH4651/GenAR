@@ -1,0 +1,18 @@
+Generate the "Reporting Period" section of the PADER report.
+
+CONTENT REQUIREMENTS:
+- State the start date and end date of the reporting period, using the exact dates from the evidence.
+- State the total number of cases received during the period, from the evidence.
+- State whether this is the initial reporting period or a subsequent one. Note: per the evidence, prior-period data was not supplied, so this should be described as covering the single supplied dataset period.
+- Do not compute or reference cumulative totals across multiple periods.
+
+FORMAT:
+- Write 2–4 concise sentences in professional regulatory prose.
+- Do not add bullet points.
+- Do not add a section heading (it will be added by the report assembler).
+- Use the date format: DD Month YYYY (e.g., 27 December 2024).
+
+RESTRICTIONS:
+- Do not infer the regulatory submission deadline.
+- Do not invent previous reporting periods.
+- Do not state whether the period is annual, semi-annual, or quarterly unless the evidence explicitly states it.

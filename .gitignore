@@ -1,0 +1,45 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+venv/
+.venv/
+env/
+
+# Data â€” never commit the supplied dataset
+*.csv
+*.xlsx
+*.xls
+
+# Generated outputs â€” regenerate at runtime
+evidence/*.json
+reports/*.md
+reports/*.pdf
+
+# Model / API caches
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test / coverage artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+reports/*.json
+

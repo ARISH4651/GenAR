@@ -1,0 +1,44 @@
+Generate the "Reaction/Adverse Event Analysis" section of the PADER report.
+
+This section analyses the adverse reactions reported during the period.
+
+CONTENT REQUIREMENTS:
+
+1. REACTION UNIVERSE
+   - State the total number of reaction rows and unique Preferred Terms (PTs) from the evidence.
+   - Note that each case may contribute more than one reaction row.
+
+2. MOST FREQUENTLY REPORTED REACTIONS
+   - Present the top reactions as a Markdown table:
+     | Rank | MedDRA Preferred Term | Count | % of Reaction Rows |
+     |------|-----------------------|-------|--------------------|
+   - Include the top 10 reactions from the evidence (or fewer if fewer exist).
+   - Use the exact PT names, counts, and percentages from the evidence.
+   - Do not round percentages differently from the evidence.
+
+3. SERIOUS CASE REACTIONS
+   - Present the top reactions from serious cases as a separate Markdown table, same format.
+   - Note: "serious reactions" here means reactions reported in cases classified as serious.
+   - Include the top 10 (or fewer if fewer exist).
+
+4. SOC UNAVAILABILITY STATEMENT
+   - Include this exact statement (adapt professional tone):
+     "System Organ Class (SOC)-level analysis was not performed for this report.
+     The dataset contains MedDRA Preferred Term (PT) data only.
+     No SOC classification field was available in the supplied dataset."
+
+5. DEMOGRAPHIC CONTEXT
+   - 1–2 sentences referencing the sex and age distribution of the case population (from demographics evidence).
+
+FORMAT:
+- Use Markdown tables for reaction lists.
+- Professional regulatory prose for narrative portions.
+- No top-level section heading.
+- Target length: 300–500 words plus tables.
+
+RESTRICTIONS:
+- Use only PT names exactly as they appear in the evidence.
+- Do not group PTs by body system.
+- Do not assess whether any reaction is expected or unexpected.
+- Do not modify counts or percentages from the evidence.
+- Do not rank reactions differently from the evidence order.

@@ -1,0 +1,46 @@
+Generate the "Summary Analysis of Cases" section of the PADER report.
+
+This section provides a tabular and narrative summary of the case universe for the reporting period.
+
+CONTENT REQUIREMENTS:
+
+1. CASE COUNTS TABLE
+   Present the following as a Markdown table:
+   | Category | Count |
+   |----------|-------|
+   Use these rows (values from evidence):
+   - Total cases received
+   - Serious cases
+   - Non-serious cases
+   - Cases meeting expedited criteria
+
+2. SERIOUSNESS ANALYSIS
+   - Describe the seriousness breakdown using only figures from case_summary evidence.
+   - Note that the seriousness criterion sub-fields (hospitalisation, life-threatening, etc.) are provided in alerts evidence.
+   - State explicitly: criteria are not mutually exclusive; a single case may meet more than one criterion.
+   - Do NOT add up criterion counts to derive the serious case total.
+
+3. OUTCOMES SUMMARY
+   - Provide a brief paragraph summarising outcome distribution.
+   - State the most common outcome category and its count.
+
+4. DEMOGRAPHIC OVERVIEW
+   - 2–3 sentences covering sex and age distribution.
+   - Reference the age derivation method (patient_patientonsetage converted to years).
+   - State the percentage of cases with unknown age.
+
+5. DATA LIMITATIONS
+   - Expectedness assessment: state it is out of scope (no CCDS supplied).
+   - Cumulative counts: state prior-period data not supplied.
+
+FORMAT:
+- Begin with the case count table.
+- Follow with numbered or headed sub-sections.
+- Professional regulatory prose.
+- No top-level section heading.
+- Target length: 250–400 words.
+
+RESTRICTIONS:
+- Do not perform arithmetic on evidence figures.
+- Do not state expectedness of any case.
+- Do not invent prior-period totals.

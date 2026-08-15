@@ -1,0 +1,36 @@
+Generate the "History of Actions" section of the PADER report.
+
+CONTENT REQUIREMENTS:
+
+This section must state clearly and professionally that no history-of-actions
+information was supplied for this exercise.
+
+Include the following statements, adapted to professional regulatory prose:
+
+1. No history of labelling changes, label amendments, or Dear Healthcare Professional
+   communications were supplied with the dataset for this exercise.
+
+2. No information on safety studies, post-authorisation safety studies (PASS),
+   risk minimisation measures (RMM), or risk management plans (RMP) was supplied.
+
+3. No information on regulatory authority communications, queries, or commitments
+   was supplied.
+
+4. Accordingly, this section cannot be populated with substantive content
+   for this version of the report.
+
+5. It is recommended that this section be completed by the applicant's regulatory
+   affairs and pharmacovigilance teams using authoritative internal records for
+   the relevant reporting period.
+
+FORMAT:
+- Professional regulatory prose.
+- 3–5 sentences.
+- No top-level section heading.
+- No bullet points.
+
+ABSOLUTE RESTRICTION:
+- Do not invent, fabricate, or hypothesise any regulatory actions.
+- Do not list example labelling changes or safety actions as placeholders.
+- Do not use language such as "typically includes" to imply invented content.
+- The content must be entirely and accurately descriptive of the limitation.

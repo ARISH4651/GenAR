@@ -1,0 +1,44 @@
+Generate the "Trends and Important Observations" section of the PADER report.
+
+CONTENT REQUIREMENTS:
+
+1. MONTHLY CASE VOLUME TREND
+   - Present monthly case counts as a Markdown table:
+     | Month | Cases Received |
+     |-------|---------------|
+   - Use the exact monthly_case_counts data from the trends evidence.
+   - Include all months in the reporting period.
+
+2. TREND NARRATIVE
+   - Describe the monthly pattern in neutral, observational language.
+   - State the months with the highest and lowest case volumes.
+   - State the total cases and the period covered.
+   - DO NOT characterise any numerical change as a "safety signal", "emerging signal",
+     "confirmed signal", or similar regulatory conclusion.
+   - The correct framing is: "Case reports increased from X in [month] to Y in [month]."
+     Not: "This increase represents an emerging safety concern."
+
+3. LIMITATIONS ON TREND INTERPRETATION
+   - State that prior-period data is not available, so no comparison to a previous
+     reporting period is possible.
+   - State that numerical trends in spontaneous reporting data reflect reporting
+     behaviour as well as actual adverse event rates, and should be interpreted
+     with caution by a qualified reviewer.
+
+4. OBSERVATIONS
+   - Note any months with notably high or low volumes (as observed facts, not conclusions).
+   - State that signal assessment and clinical interpretation are outside the scope of
+     this automated analysis.
+
+FORMAT:
+- Use a Markdown table for the monthly counts.
+- Follow with 2–4 paragraphs of narrative.
+- Professional regulatory language.
+- No top-level section heading.
+- Target length: 200–350 words plus table.
+
+RESTRICTIONS:
+- Do not assert a safety signal.
+- Do not compare to prior-period data (not available).
+- Do not explain the reasons for any trend (e.g., do not attribute a peak to a specific event).
+- Present all trend statements as observations.

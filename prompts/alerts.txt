@@ -1,0 +1,40 @@
+Generate the "Serious Cases / 15-Day Alerts" section of the PADER report.
+
+CONTENT REQUIREMENTS:
+
+1. EXPEDITED CASE SUMMARY
+   - State the total number of cases meeting expedited criteria (fulfillexpeditecriteria == "yes").
+   - State this as a count and as a percentage of total cases.
+   - Name the field used as the alert indicator (fulfillexpeditecriteria).
+   - Include the interpretation note from the evidence about this field's limitations.
+
+2. SERIOUSNESS CRITERIA BREAKDOWN
+   Present as a Markdown table:
+   | Seriousness Criterion | Cases Meeting Criterion | % of Serious Cases |
+   |-----------------------|------------------------|-------------------|
+   - Use the exact figures from the alerts evidence seriousness_criteria_breakdown.
+   - The table must include all six criteria.
+   - After the table, include this statement:
+     "The above counts are not mutually exclusive. A single case may satisfy more than one
+     seriousness criterion simultaneously. The total of criterion-level counts will
+     therefore exceed the number of serious cases."
+
+3. CUMULATIVE COUNTS
+   - State explicitly: "Prior-period data was not supplied for this exercise.
+     Cumulative expedited case counts are therefore not available."
+
+4. REGULATORY INTERPRETATION
+   - 2–3 sentences stating that the expedited field is taken at face value from the dataset,
+     and that confirmation of real-world 15-day alert obligations requires qualified regulatory review.
+
+FORMAT:
+- Use a Markdown table for the criteria breakdown.
+- Professional regulatory prose.
+- No top-level section heading.
+- Target length: 200–350 words plus table.
+
+RESTRICTIONS:
+- Do not add up criterion counts to obtain the serious case total.
+- Do not assert that a specific 15-day regulatory deadline was met or missed.
+- Do not invent prior-period expedited case counts.
+- Do not assess expectedness of expedited cases.
