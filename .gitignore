@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.py[cod]
 *.pyo
@@ -42,4 +42,6 @@ Thumbs.db
 .coverage
 htmlcov/
 reports/*.json
+!reports/README.md
+!reports/report_output.md
 

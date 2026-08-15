@@ -5,12 +5,12 @@ LLMProvider abstraction + GeminiProvider implementation.
 
 Design:
   - LLMProvider is an abstract base class with a single .generate() method.
-  - GeminiProvider implements it using the google-generativeai SDK.
-  - Any other provider (OpenAI, Anthropic, etc.) can be added without
-    changing the rest of the pipeline.
+  - GeminiProvider implements it using the modern google-genai SDK.
+  - Gemini is the only provider implemented in this submission.
 
-Why an abstraction here?
-  The LLM is the only replaceable component in the pipeline. Everything
+
+Gemini is isolated behind this interface; validation, analysis, evidence, prompts, and reporting remain deterministic.
+The abstraction documents that boundary explicitly.
   else (validation, analysis, evidence, prompts) is provider-agnostic.
   The abstraction documents that boundary explicitly.
 
@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 # Default generation parameters
 DEFAULT_MODEL = "gemini-3.5-flash"
-DEFAULT_TEMPERATURE = 0.3   # Low for regulatory text — consistent, factual output
+DEFAULT_TEMPERATURE = 0.3   # Low for regulatory text â€” consistent, factual output
 DEFAULT_MAX_RETRIES = 3
 DEFAULT_RETRY_DELAY = 5.0   # seconds, doubles on each retry
 
@@ -193,7 +193,7 @@ class StubProvider(LLMProvider):
                 section = line.replace("SECTION:", "").strip()
                 break
         return (
-            f"[STUB — LLM SKIPPED]\n\n"
+            f"[STUB â€” LLM SKIPPED]\n\n"
             f"This section ({section}) was not generated because --skip-llm was specified. "
             f"Run without --skip-llm and with a valid GEMINI_API_KEY to generate real content."
         )
