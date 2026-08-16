@@ -39,17 +39,12 @@ The default genuine report output is `reports/report_output.md`. Set `GEMINI_API
 Online validation path:
 
 ```powershell
-python -X utf8 src\main.py `
-  --input Bisoprolol_icsr_sample_1068rows.xlsx `
-  --output reports\draft_report.md `
+python -X utf8 src\main.py --input Bisoprolol_icsr_sample_1068rows.xlsx --output reports\draft_report.md `
 ```
 Offline validation path:
 
 ```powershell
-python -X utf8 src\main.py `
-  --input <dataset> `
-  --skip-llm `
-  --output reports\draft_report.md
+python -X utf8 src\main.py --input <dataset> --skip-llm --output reports\draft_report.md
 ```
 
 `--skip-llm` uses `StubProvider` for offline testing only. Its output is not a genuine AI-generated report and must not be approved as the final submission artifact.
