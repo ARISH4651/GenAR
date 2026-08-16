@@ -37,11 +37,12 @@ python -X utf8 src\main.py --input <dataset>
 The default genuine report output is `reports/report_output.md`. Set `GEMINI_API_KEY` and optionally `GEMINI_MODEL`.
 
 Online validation path:
-'''powershell
-python -X utf8 src\main.py 
---input Bisoprolol_icsr_sample_1068rows.xlsx 
---output reports\draft_report.md
-'''
+
+```powershell
+python -X utf8 src\main.py `
+  --input Bisoprolol_icsr_sample_1068rows.xlsx `
+  --output reports\draft_report.md `
+```
 Offline validation path:
 
 ```powershell
