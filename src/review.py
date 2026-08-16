@@ -149,6 +149,38 @@ def _is_approvable(gen_status: str, contradicted: int, sections: list[dict]) -> 
 SEPARATOR = "=" * 62
 
 
+
+
+def _update_manifest_review_status(manifest_path: Path, status: str, sections: list[dict]) -> None:
+    """Persist human-review state while preserving automated validation fields."""
+    if not manifest_path.exists():
+        return
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["approval_status"] = status
+    per_section = manifest.get("per_section", {})
+    approved_names = {section["name"] for section in sections}
+    for name, data in per_section.items():
+        if name in approved_names:
+            data["status"] = status
+            data["review_status"] = status
+    manifest["per_section"] = per_section
+    manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+
+def _render_approved_sections(content: str, sections: list[dict]) -> str:
+    """Change only eligible section review fields, never automated validation fields."""
+    rendered = content
+    for section in sections:
+        name = section.get("name", "")
+        if not name or section.get("status", "").upper() == "MISSING":
+            continue
+        pattern = re.compile(
+            r"(^##\s+\d+\.\s+" + re.escape(name) + r"\n\n\*Review Status: \*\*)(?:PENDING|FLAGGED|APPROVED)(\*\*\*\s*$)",
+            re.MULTILINE,
+        )
+        rendered = pattern.sub(r"\1APPROVED\2", rendered, count=1)
+    return rendered
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         prog="genar-review",
@@ -247,7 +279,8 @@ def main() -> int:
             "",
         ])
 
-        final_content = approval_header + content
+        _update_manifest_review_status(manifest_path, "APPROVED", sections)
+        final_content = approval_header + _render_approved_sections(content, sections)
         final_path.write_text(final_content, encoding="utf-8")
 
         print()
@@ -258,6 +291,7 @@ def main() -> int:
     else:
         print()
         print(SEPARATOR)
+        _update_manifest_review_status(manifest_path, "REJECTED", sections)
         print("NOT APPROVED. Draft unchanged. Final report was NOT created.")
         print(SEPARATOR)
         return 0
@@ -265,7 +299,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-
-
-
-
