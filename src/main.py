@@ -17,7 +17,7 @@ Usage:
 
 Environment:
     GEMINI_API_KEY  (required unless --skip-llm)
-    GEMINI_MODEL    (optional, default: gemini-2.5-flash)
+    GEMINI_MODEL    (optional, default: gemini-3.5-flash)
 """
 
 from __future__ import annotations
